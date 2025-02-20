@@ -2,10 +2,13 @@ package com.example.menus_android;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -20,8 +23,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
-    AlertDialog.Builder builder;
-    AlertDialog dialog;
+    AlertDialog.Builder builder,builderAdd;
+    AlertDialog dialog,dialogAdd;
 
     List<AndroidVersion> androidVersions=new ArrayList<>();
     @Override
@@ -47,7 +50,14 @@ public class MainActivity extends AppCompatActivity {
 
         Objects.requireNonNull(getSupportActionBar()).setTitle("AndroidVersion");
 
-         builder= new AlertDialog.Builder(this);
+        View addLayout=getLayoutInflater().inflate(R.layout.add_layout,null);
+
+        builderAdd=new AlertDialog.Builder(this);
+        builderAdd.setView(addLayout);
+
+        dialogAdd=builderAdd.create();
+
+        builder= new AlertDialog.Builder(this);
         builder.setMessage(getString(R.string.confirmation_delet))
                 .setTitle(getString(R.string.alert_title));
 
@@ -59,6 +69,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
         dialog = builder.create();
+
+        Button button=addLayout.findViewById(R.id.cancelAddBTN);
+
+        button.setOnClickListener(v -> {
+            dialogAdd.dismiss();
+        });
     }
 
     @Override
@@ -74,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         int itemId=item.getItemId();
 
         if(itemId== R.id.AddItem){
+            dialogAdd.show();
             return true;
         } else if (itemId==R.id.EraseItem) {
             return true;

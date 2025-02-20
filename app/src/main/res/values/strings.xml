@@ -3,4 +3,9 @@
     <string name="modify_list_item_title">Modifier la liste</string>
     <string name="AddItemTitle">Ajouter</string>
     <string name="erase_item_title">Effacer la liste</string>
+    <string name="edit_delet_version_item_title">Modifier et Supprimer une version</string>
+    <string name="edit_version_item">Modifier</string>
+    <string name="delet_version_item">Supprimer</string>
+    <string name="confirmation_delet">êtes vous sur?</string>
+    <string name="alert_title">ATTENTION!</string>
 </resources>

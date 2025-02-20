@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Menus_android</string>
+    <string name="modify_list_item_title">Modifier la liste</string>
+    <string name="AddItemTitle">Ajouter</string>
+    <string name="erase_item_title">Effacer la liste</string>
 </resources>

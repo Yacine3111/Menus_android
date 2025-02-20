@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/modifyListItem"
+        android:title="@string/modify_list_item_title">
+
+        <menu>
+            <item
+                android:id="@+id/AddItem"
+                android:title="@string/AddItemTitle"
+                android:icon="@drawable/ic_add"
+                />
+            <item
+                android:id="@+id/EraseItem"
+                android:title="@string/erase_item_title"
+                android:icon="@drawable/ic_erase"
+                />
+        </menu>
+    </item>
+
+</menu>
